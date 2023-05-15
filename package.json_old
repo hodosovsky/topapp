@@ -27,6 +27,12 @@
 		"typescript": "5.0.4"
 	},
 	"devDependencies": {
-		"@svgr/webpack": "^7.0.0"
+		"@svgr/webpack": "^7.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.59.2",
+		"@typescript-eslint/parser": "^5.59.2",
+		"stylelint": "^15.6.1",
+		"stylelint-config-standard": "^33.0.0",
+		"stylelint-order": "^6.0.3",
+		"stylelint-order-config-standard": "^0.1.3"
 	}
 }
