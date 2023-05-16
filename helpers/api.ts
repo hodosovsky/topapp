@@ -7,6 +7,10 @@ export const API = {
 		find: process.env.NEXT_PUBLIC_DOMAIN + '/api/product/find/',
 	},
 
+	author: {
+		search: process.env.NEXT_PUBLIC_DOMAIN + '/api-v2/author/textSearch',
+	},
+
 	review: {
 		createDemo: process.env.NEXT_PUBLIC_DOMAIN + '/api/review/create-demo',
 	},
