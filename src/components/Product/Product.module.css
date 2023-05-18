@@ -165,7 +165,7 @@
 	color: var(--primary);
 }
 
-@media screen and (max-width: 1320px) {
+@media screen and (width <= 1320px) {
 	.product {
 		grid-template-columns: 70px 30px auto 40px auto 40px 1fr;
 		grid-template-areas:
@@ -248,7 +248,7 @@
 	}
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (width <= 640px) {
 	.product {
 		grid-template-columns: 70px 30px 1fr;
 		grid-template-areas:
@@ -278,7 +278,7 @@
 	}
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (width <= 480px) {
 	.product {
 		grid-template-columns: 1fr;
 		grid-template-areas:
@@ -304,7 +304,7 @@
 	}
 
 	.reviewButton {
-		margin-left: 0;
 		margin-top: 20px;
+		margin-left: 0;
 	}
 }
