@@ -29,8 +29,6 @@ export const Product = motion(
 			}
 
 			const scrollToReview = () => {
-				console.log(reviewRef)
-
 				setIsReviewOpened(prev => !prev)
 
 				setTimeout(() => {
@@ -39,6 +37,7 @@ export const Product = motion(
 						block: 'start',
 					})
 				})
+				reviewRef.current?.focus()
 			}
 
 			return (
@@ -57,18 +56,29 @@ export const Product = motion(
 						</div>
 						<div className={styles.title}>{product.title} </div>
 						<div className={styles.price}>
+							<span className="visualyHidden">цена</span>
 							{priceUA(product.price)}{' '}
 							{product.oldPrice && (
 								<Tag className={styles.oldPrice} color="green">
+									<span className="visualyHidden">
+										скидка
+									</span>
 									{priceUA(product.price - product.oldPrice)}
 								</Tag>
 							)}
 						</div>
 						<div className={styles.credit}>
+							<span className="visualyHidden">кредит</span>
 							{priceUA(product.credit)}/
 							<span className={styles.month}>мес</span>{' '}
 						</div>
 						<div className={styles.rating}>
+							<span className="visualyHidden">
+								рейтинг +
+								{product.reviewAvg
+									? product.reviewAvg
+									: product.initialRating}
+							</span>
 							<Rating
 								rating={
 									product.reviewAvg
@@ -89,8 +99,12 @@ export const Product = motion(
 									</Tag>
 								))}
 						</div>
-						<div className={styles.priceTitle}>цена</div>
-						<div className={styles.creditTitle}>кредит</div>
+						<div className={styles.priceTitle} aria-hidden={true}>
+							цена
+						</div>
+						<div className={styles.creditTitle} aria-hidden={true}>
+							кредит
+						</div>
 						<div className={styles.rateTitle}>
 							<a href="#ref" onClick={scrollToReview}>
 								{product.reviewCount}{' '}
@@ -156,6 +170,7 @@ export const Product = motion(
 								arrow={isReviewOpened ? 'down' : 'right'}
 								className={styles.reviewButton}
 								onClick={() => setIsReviewOpened(prev => !prev)}
+								aria-expanded={isReviewOpened}
 							>
 								Читать отзывы
 							</Button>
@@ -170,6 +185,7 @@ export const Product = motion(
 							color="blue"
 							className={styles.reviews}
 							ref={reviewRef}
+							tabIndex={isReviewOpened ? 0 : -1}
 						>
 							{product.reviews.map(r => (
 								<div key={r._id}>
@@ -178,7 +194,10 @@ export const Product = motion(
 								</div>
 							))}
 
-							<ReviewForm productId={product._id} />
+							<ReviewForm
+								productId={product._id}
+								isOpened={isReviewOpened}
+							/>
 						</Card>
 					</motion.div>
 				</div>

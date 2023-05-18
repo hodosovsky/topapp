@@ -43,7 +43,7 @@
 	background-color: var(--red-light);
 }
 
-.error .close {
+.error .close svg {
 	fill: var(--red);
 }
 
@@ -52,11 +52,15 @@
 }
 
 .close {
-	fill: var(--green);
+	cursor: pointer;
 	position: absolute;
 	top: 20px;
 	right: 20px;
-	cursor: pointer;
+	border: none;
+}
+
+.close svg {
+	fill: var(--green);
 }
 
 @media screen and (max-width: 1100px) {

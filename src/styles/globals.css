@@ -3,13 +3,13 @@
 	--black: #3b434e;
 	--gray-light: #ebebeb;
 	--gray: #a4a4a4;
-	--grey-dark: #787d85;
+	--grey-dark: #51648c;
 	--white: #ffffff;
-	--primary: #7653fc;
+	--primary: #7351f5;
 	--primary-hover: #6344df;
 	--red: #fc836d;
 	--red-light: #fea291;
-	--green: #1dc37e;
+	--green: #007b48;
 	--green-light: #c8f8e4;
 }
 
@@ -32,4 +32,11 @@ a {
 
 * {
 	box-sizing: border-box;
+}
+
+.visualyHidden {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: absolute;
 }

@@ -2,7 +2,7 @@
 const nextConfig = {
 	reactStrictMode: true,
 	images: {
-		domains: ['courses-top.ru'],
+		domains: ['courses-top.ru', 'courses-top.ruhttp'],
 	},
 	webpack(config, options) {
 		config.module.rules.push({
