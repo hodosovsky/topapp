@@ -7,7 +7,6 @@ import { Tag } from '../Tag/Tag'
 import { Button } from '../Button/Button'
 import { priceUA, declOfNum } from '../../../helpers/helpers'
 import { Divider } from '../Divider/Divider'
-import Image from 'next/image'
 import { ForwardedRef, forwardRef, useRef, useState } from 'react'
 import { Review } from '../Review/Review'
 import { P } from '../P/P'
@@ -44,7 +43,7 @@ export const Product = motion(
 				<div className={className} {...props} ref={ref}>
 					<Card className={styles.product}>
 						<div className={styles.logo}>
-							<Image
+							<img
 								src={
 									process.env.NEXT_PUBLIC_DOMAIN +
 									product.image

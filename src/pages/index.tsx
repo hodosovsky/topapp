@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Button, Htag, Input, P, Rating, Tag, Textarea } from '@/components'
 import { useEffect, useState } from 'react'
 import { withLayout } from '@/Layout/Layout'
